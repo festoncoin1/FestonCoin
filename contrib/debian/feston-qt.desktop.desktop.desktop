@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=FestonCoin
+Comment=FestonCoin P2P Cryptocurrency
+Exec=feston-qt %u
+Terminal=false
+Type=Application
+Icon=feston128
+MimeType=x-scheme-handler/feston;
+Categories=Office;Finance;
+Name[ru]=feston-qt.desktop.desktop

@@ -1,0 +1,26 @@
+[Unit]
+Description=FestonCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=feston
+Group=feston
+
+Type=forking
+PIDFile=/var/lib/festond/festond.pid
+
+ExecStart=/usr/bin/festond -daemon -pid=/var/lib/festond/festond.pid \
+          -conf=/etc/feston/feston.conf -datadir=/var/lib/festond
+
+ExecStop=-/usr/bin/feston-cli -conf=/etc/feston/feston.conf \
+         -datadir=/var/lib/festond stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

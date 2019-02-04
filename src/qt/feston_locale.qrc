@@ -1,0 +1,29 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/feston_bg.qm</file>
+        <file alias="ca">locale/feston_ca.qm</file>
+        <file alias="cs">locale/feston_cs.qm</file>
+        <file alias="da">locale/feston_da.qm</file>
+        <file alias="de">locale/feston_de.qm</file>
+        <file alias="en">locale/feston_en.qm</file>
+        <file alias="en_US">locale/feston_en_US.qm</file>
+        <file alias="es">locale/feston_es.qm</file>
+        <file alias="fi">locale/feston_fi.qm</file>
+        <file alias="fr_FR">locale/feston_fr_FR.qm</file>
+        <file alias="it">locale/feston_it.qm</file>
+        <file alias="ja">locale/feston_ja.qm</file>
+        <file alias="ko_KR">locale/feston_ko_KR.qm</file>
+        <file alias="nl">locale/feston_nl.qm</file>
+        <file alias="pl">locale/feston_pl.qm</file>
+        <file alias="pt">locale/feston_pt.qm</file>
+        <file alias="pt_BR">locale/feston_pt_BR.qm</file>
+        <file alias="ro_RO">locale/feston_ro_RO.qm</file>
+        <file alias="ru">locale/feston_ru.qm</file>
+        <file alias="sk">locale/feston_sk.qm</file>
+        <file alias="sv">locale/feston_sv.qm</file>
+        <file alias="tr">locale/feston_tr.qm</file>
+        <file alias="uk">locale/feston_uk.qm</file>
+        <file alias="zh_CN">locale/feston_zh_CN.qm</file>
+        <file alias="zh_TW">locale/feston_zh_TW.qm</file>
+    </qresource>
+</RCC>

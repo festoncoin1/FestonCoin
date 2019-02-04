@@ -1,0 +1,26 @@
+# /etc/conf.d/festond: config file for /etc/init.d/festond
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/feston/feston.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/festond"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/festond.pid"
+
+# Where to write festond data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/festond"
+
+# User and group to own festond process
+#BITCOIND_USER="feston"
+#BITCOIND_GROUP="feston"
+
+# Path to festond executable
+#BITCOIND_BIN="/usr/bin/festond"
+
+# Nice value to run festond under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
