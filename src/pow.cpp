@@ -16,7 +16,6 @@
 
 #include <math.h>
 
-
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast)
 {
     /* current difficulty formula, FestonCoin - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
@@ -91,7 +90,18 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast)
 
     uint256 bnNew(PastDifficultyAverage);
 
-    int64_t _nTargetTimespan = CountBlocks * (pindexLast->nHeight > Params().LAST_POW_BLOCK() ? Params().TargetSpacing() : Params().TargetSpacingSlowLaunch());
+    int64_t _nTargetTimespan;
+    //int64_t _nTargetTimespan = CountBlocks * (pindexLast->nHeight > Params().LAST_POW_BLOCK() ? Params().TargetSpacing() : Params().TargetSpacingSlowLaunch());
+    if (pindexLast->nHeight <= 2500 ) { //block_time fork block
+      _nTargetTimespan = CountBlocks * Params().TargetSpacingSlowLaunch(); // 10 min
+
+    } else if (pindexLast->nHeight > 2500 && pindexLast->nHeight <= Params().LAST_POW_BLOCK()) {
+      _nTargetTimespan = CountBlocks * (3 * 60); // 3 min
+
+    } else {
+      _nTargetTimespan = CountBlocks * Params().TargetSpacing(); // 1 min
+
+    }
 
     if (nActualTimespan < _nTargetTimespan / 3)
         nActualTimespan = _nTargetTimespan / 3;
