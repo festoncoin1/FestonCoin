@@ -9,7 +9,7 @@ todo.txt
 reset-files.bash
 
 *.tar.gz
-
+multi-compile.sh
 *.exe
 src/feston
 src/festond
