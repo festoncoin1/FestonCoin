@@ -29,7 +29,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast)
     uint256 PastDifficultyAverage;
     uint256 PastDifficultyAveragePrev;
 
-    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin ||
+        (pindexLast->nHeight >= 3000 && pindexLast->nHeight <= 3025)) {
         return Params().StartWork().GetCompact();
     }
 

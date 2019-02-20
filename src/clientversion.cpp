@@ -44,8 +44,8 @@ const std::string CLIENT_NAME("FestonCoin Core");
 
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "62f4632"
-#define GIT_COMMIT_DATE "Tue Aug 21 16:21:20 2018 +0200"
+#define GIT_COMMIT_ID "6e8b1b6"
+#define GIT_COMMIT_DATE "Sun Feb 17 11:09:28 2019 -0800"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
