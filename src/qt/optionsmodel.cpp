@@ -73,6 +73,10 @@ void OptionsModel::Init()
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
 
+    if (!settings.contains("fsubtractImmatureBalance"))
+        settings.setValue("fsubtractImmatureBalance", false);
+    
+
     if (!settings.contains("nObfuscationRounds"))
         settings.setValue("nObfuscationRounds", 2);
 
@@ -209,6 +213,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("bSpendZeroConfChange");
         case ShowMasternodesTab:
             return settings.value("fShowMasternodesTab");
+        case subtractImmatureBalance:
+            return settings.value("fsubtractImmatureBalance");
 #endif
         case DisplayUnit:
             return nDisplayUnit;
@@ -301,6 +307,12 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
         case ShowMasternodesTab:
             if (settings.value("fShowMasternodesTab") != value) {
                 settings.setValue("fShowMasternodesTab", value);
+                setRestartRequired(true);
+            }
+            break;
+        case subtractImmatureBalance:
+            if (settings.value("fsubtractImmatureBalance") != value) {
+                settings.setValue("fsubtractImmatureBalance", value);
                 setRestartRequired(true);
             }
             break;

@@ -658,7 +658,9 @@
 
      QWidget .QFrame#frame_blue { /*blue frame */
 
-        border-image: url(':/images/frame_blue') 0 0 0 0 stretch stretch;
+        background-color:qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                                        stop: 0 #e59d1c,
+                                        stop: 1 #e5741c);
         background-repeat:none;
         border-style: none;
        }

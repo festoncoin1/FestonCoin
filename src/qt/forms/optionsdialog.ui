@@ -239,6 +239,16 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="subtractImmatureBalance">
+            <property name="toolTip">
+             <string>Subtract immature balance from current balance.</string>
+            </property>
+            <property name="text">
+             <string>&amp;Subtract immature balance</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>

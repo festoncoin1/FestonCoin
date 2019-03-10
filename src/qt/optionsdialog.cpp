@@ -139,7 +139,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 
     /* setup/change UI elements when proxy IP is invalid/valid */
     connect(this, SIGNAL(proxyIpChecks(QValidatedLineEdit*, int)), this, SLOT(doProxyIpChecks(QValidatedLineEdit*, int)));
-   
+
     ui->unitLabel->setVisible(false);
     ui->unit->setVisible(false);
     ui->digitsLabel->setVisible(false);
@@ -148,7 +148,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->thirdPartyTxUrls->setVisible(false);
     ui->themeLabel->setVisible(false);
     ui->theme->setVisible(false);
-    
+
 }
 
 OptionsDialog::~OptionsDialog()
@@ -192,6 +192,7 @@ void OptionsDialog::setModel(OptionsModel* model)
     connect(ui->lang, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->thirdPartyTxUrls, SIGNAL(textChanged(const QString&)), this, SLOT(showRestartWarning()));
     connect(ui->showMasternodesTab, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+    connect(ui->subtractImmatureBalance, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
 }
 
 void OptionsDialog::setMapper()
@@ -234,6 +235,7 @@ void OptionsDialog::setMapper()
 
     /* Masternode Tab */
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
+    mapper->addMapping(ui->subtractImmatureBalance, OptionsModel::subtractImmatureBalance);
 }
 
 void OptionsDialog::enableOkButton()

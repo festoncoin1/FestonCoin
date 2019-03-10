@@ -49,6 +49,7 @@ public:
         ObfuscationRounds,   // int
         AnonymizeFTONAmount, //int
         ShowMasternodesTab,  // bool
+        subtractImmatureBalance,  // bool
         Listen,              // bool
         OptionIDRowCount,
     };

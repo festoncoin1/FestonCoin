@@ -106,7 +106,7 @@ QT_MOC_CPP = \
   qt/moc_walletview.cpp \
   qt/moc_toolspage.cpp \
   qt/moc_qssloader.cpp
-  
+
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
@@ -240,8 +240,8 @@ RES_ICONS = \
   qt/res/icons/tx_inout.png \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
-  qt/res/icons/tx_mined.png  
-  
+  qt/res/icons/tx_mined.png
+
 RES_FONTS = \
     qt/res/fonts/feston_font.ttf
 
@@ -305,7 +305,7 @@ BITCOIN_QT_CPP += \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
   qt/toolspage.cpp \
-  qt/qssloader.cpp  
+  qt/qssloader.cpp
 
 endif
 
@@ -314,14 +314,13 @@ RES_IMAGES = \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
   qt/res/images/feston_logo_horizontal.png \
-  qt/res/images/frame_blue.png \
   qt/res/images/downArrow.png \
   qt/res/images/downArrow_small.png \
   qt/res/images/upArrow_small.png \
   qt/res/images/leftArrow_small.png \
   qt/res/images/rightArrow_small.png \
   qt/res/images/qtreeview_selected.png
-  
+
 
 RES_CSS = \
   qt/res/css/default.css

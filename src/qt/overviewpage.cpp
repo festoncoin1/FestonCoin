@@ -184,7 +184,12 @@ OverviewPage::~OverviewPage()
 
 void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance, const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance)
 {
-    currentBalance = balance - immatureBalance;
+    QSettings settings;
+    if (settings.value("fsubtractImmatureBalance").toBool()) {
+        currentBalance = balance - immatureBalance;
+    } else {
+      currentBalance = balance;
+    }
     currentUnconfirmedBalance = unconfirmedBalance;
     currentImmatureBalance = immatureBalance;
     currentAnonymizedBalance = anonymizedBalance;
@@ -195,14 +200,14 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     // FestonCoin labels
 
     if(balance >= 0) {
-        ui->labelBalance->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, balance /*currentBalance*/, false, BitcoinUnits::separatorNever));
+        ui->labelBalance->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, currentBalance, false, BitcoinUnits::separatorNever));
     } else {
       ui->labelBalance->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, 0, false, BitcoinUnits::separatorNever));
     }
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorNever));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorNever));
     //ui->labelAnonymized->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, anonymizedBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelTotal->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, balance /*currentBalance*/ + unconfirmedBalance + immatureBalance, false, BitcoinUnits::separatorNever));
+    ui->labelTotal->setText(BitcoinUnits::floorHtmlWithoutUnit(nDisplayUnit, currentBalance + unconfirmedBalance + immatureBalance, false, BitcoinUnits::separatorNever));
 
 
     // Watchonly labels
